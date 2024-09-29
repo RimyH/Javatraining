@@ -1,0 +1,37 @@
+/* 
+    private Map<Integer, List<Joueur>> joueursParDecennie;
+
+    public RegistreJoueurs() {
+        this.joueursParDecennie = new HashMap<>();
+    }
+
+    public void addJoueur(Joueur joueur) {
+        int decennie = joueur.getAnneeDeNaissance() / 10 * 10;
+        joueursParDecennie.computeIfAbsent(decennie, k -> new ArrayList<>()).add(joueur);   //ajoute le joueur à la liste correspondante à la décennie, cree une nouvelle liste si la décennie n'existe pas encore dans la table de hachage.
+    }
+
+    public List<Joueur> get(int decennie) {
+        return joueursParDecennie.getOrDefault(decennie, new ArrayList<>()); //permet d'obtenir la liste des joueurs nés pendant une décennie donnée. Si la décennie n'existe pas dans la table de hachage, elle retourne une liste vide.
+    }
+
+    public int count(int decennie) {
+        return get(decennie).size();
+    }
+
+    public int count() {
+        int total = 0;
+        for (List<Joueur> joueurs : joueursParDecennie.values()) {
+            total += joueurs.size();
+        }
+        return total;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<Integer, List<Joueur>> entry : joueursParDecennie.entrySet()) {
+            sb.append("Décennie ").append(entry.getKey()).append(" : ").append(entry.getValue()).append("\n");
+        }
+        return sb.toString();
+    }
+    */
